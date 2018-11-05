@@ -1,6 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    coderay (1.1.2)
+    method_source (0.9.1)
+    pry (0.12.0)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     puma (3.12.0)
     rack (2.0.5)
 
@@ -8,6 +13,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pry
   puma
   rack
 
@@ -15,4 +21,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.16.1
+   1.17.1
