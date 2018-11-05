@@ -17,7 +17,7 @@ class Controller
 
   def not_found
     self  .status  = 404
-    self  .headers = {}
+    self  .headers = {"Content-Type" => "text/html"}
     self  .content = [public.render('404')]
     self
   end
