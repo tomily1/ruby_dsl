@@ -18,21 +18,25 @@ class Controller
   def not_found
     self  .status  = 404
     self  .headers = {"Content-Type" => "text/html"}
-    self  .content = [public.render('404')]
+    self  .content = [error_404.render('404')]
     self
   end
 
   def internal_error
     self  .status  = 500
-    self  .headers = {}
-    self  .content = ["Internal error"]
+    self  .headers = {"Content-Type" => "text/html"}
+    self  .content = [error_500.render('500')]
     self
   end
 
   private
 
-  def public
+  def error_404
     Slim::Template.new(File.join(Application.root, 'public', "404.html.slim"))
+  end
+
+  def error_500
+    Slim::Template.new(File.join(Application.root, 'public', "500.html.slim"))
   end
 
   def template
