@@ -11,14 +11,14 @@ class Controller
     send(action)
     self  .status  = 200
     self  .headers = {"Content-Type" => "text/html"}
-    self  .content = ["Hello World"]
+    self  .content = [template.render(self)]
     self
   end
 
   def not_found
     self  .status  = 404
     self  .headers = {}
-    self  .content = ["not found!"]
+    self  .content = [public.render('404')]
     self
   end
 
@@ -27,5 +27,15 @@ class Controller
     self  .headers = {}
     self  .content = ["Internal error"]
     self
+  end
+
+  private
+
+  def public
+    Slim::Template.new(File.join(App.root, 'public', "404.html.slim"))
+  end
+
+  def template
+    Slim::Template.new(File.join(App.root, 'app', 'views', "#{self.name}", "#{self.action}.html.slim"))
   end
 end
