@@ -32,10 +32,10 @@ class Controller
   private
 
   def public
-    Slim::Template.new(File.join(App.root, 'public', "404.html.slim"))
+    Slim::Template.new(File.join(Application.root, 'public', "404.html.slim"))
   end
 
   def template
-    Slim::Template.new(File.join(App.root, 'app', 'views', "#{self.name}", "#{self.action}.html.slim"))
+    Slim::Template.new(File.join(Application.root, 'app', 'views', "#{self.name}", "#{self.action}.html.slim"))
   end
 end
