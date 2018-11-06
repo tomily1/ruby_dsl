@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: ruby_dsl
+  port: 5432
+  user: isreal
+  host: localhost
