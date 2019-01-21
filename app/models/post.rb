@@ -1,2 +1,2 @@
-# class Post < Sequel::Model(DB)
-# end
+class Post < Sequel::Model(DB)
+end
