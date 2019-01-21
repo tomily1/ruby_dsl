@@ -8,4 +8,8 @@ gem 'puma'
 gem 'rack'
 gem 'slim'
 gem 'sequel'
-gem 'sqlite3'
+gem 'sequel_pg', :require=>'sequel'
+
+group :development do
+  gem 'pry-byebug'
+end
